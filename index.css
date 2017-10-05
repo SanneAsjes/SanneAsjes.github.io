@@ -13,16 +13,17 @@ body{
 }
 
 @keyframes textAnimation{
-  0% { transform: scale (1); letter-spacing: 0 }
-  50% { transform: scale (1.5); letter-spacing:5px }
-  100% { transform: scale (1); letter-spacing: 0 }
+  0% { font-size:20px; letter-spacing: 0 }
+  50% { font-size:40px; letter-spacing:5px }
+  100% { font-size:20px; letter-spacing: 0 }
 }
 
 h1{
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: "40px";
+  line-height: 40;
+  font-size: 20px;
   color: pink;
-  text-shadow: 2px 2px red;
+  text-shadow: 2px 2px gold;
   text-align: center;
   animation-name: textAnimation;
   animation-duration: 10s;
