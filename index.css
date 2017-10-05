@@ -7,3 +7,23 @@
 .axis .domain {
   display: none;
 }
+
+body{
+  overflow: hidden;
+}
+
+@keyframes textAnimation{
+  0% { transform: scale (1); letter-spacing: 0 }
+  50% { transform: scale (2.5); letter-spacing:5px }
+  100% { transform: scale (1); letter-spacing: 0 }
+}
+
+h1{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: "60px";
+  color: pink;
+  text-shadow: 2px 2px red;
+  text-align: center;
+  animation-name: textAnimation;
+  animation-duration: 16s;
+}
