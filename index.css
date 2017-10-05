@@ -1,9 +1,9 @@
-.axis--x path {
-  display: none;
+.container{
+  width: calc(100% - 200px);
+  margin:0 auto;
+  overflow-x:scroll;
 }
 
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+.axis .domain {
+  display: none;
 }
