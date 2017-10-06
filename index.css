@@ -1,3 +1,4 @@
+/*Dit is zodat de svg scrollbaar is en niet de body*/
 .container{
   width: calc(100% - 200px);
   margin:0 auto;
@@ -12,6 +13,7 @@ body{
   overflow: hidden;
 }
 
+/*dit is voor de geweldige header animatie*/
 @keyframes textAnimation{
   0% { font-size:20px; letter-spacing: 0 }
   50% { font-size:23px; letter-spacing:5px }

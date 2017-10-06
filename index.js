@@ -37,6 +37,8 @@ d3.csv("index.csv", function(d, i, columns) {
   x1.domain(keys).rangeRound([0, x0.bandwidth()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
 
+//De svg tekenen
+
   g.append("g")
     .selectAll("g")
     .data(data)
@@ -68,6 +70,7 @@ d3.csv("index.csv", function(d, i, columns) {
       .attr("text-anchor", "start")
       .text("%");
 
+//de legenda(aaaaag)
   var legend = g.append("g")
       .attr("font-family", "sans-serif")
       .attr("font-size", 10)
