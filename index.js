@@ -17,9 +17,11 @@ var x1 = d3.scaleBand()
 var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 
+//kleuren voor de barchart
 var z = d3.scaleOrdinal()
-    .range(["#0066cc", "#e0cda7", "#ac8f57", "#6b4423", "#e3e4el", "#9a9a9a", "#446d44", "#8f5a38", "#9a1clc", "#ffcf17", "#dd6200", "#a86bf0"]);
+    .range(["#00008B", "#483D8B", "#87CEFA", "#191970", "#7B68EE", "#8B008B", "#DC143C", "#FFB6C1", "#48D1CC", "#DB7093", "#2E8B57", "#008080"]);
 
+//door de data heen loopen
 d3.csv("index.csv", function(d, i, columns) {
   for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
   return d;
@@ -30,7 +32,8 @@ d3.csv("index.csv", function(d, i, columns) {
 
   var keys = data.columns.slice(1);
 
-  x0.domain(data.map(function(d) { return d.State; }));
+  //State naar Country veranderd
+  x0.domain(data.map(function(d) { return d.Country; }));
   x1.domain(keys).rangeRound([0, x0.bandwidth()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
 
@@ -38,7 +41,7 @@ d3.csv("index.csv", function(d, i, columns) {
     .selectAll("g")
     .data(data)
     .enter().append("g")
-      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; })
+      .attr("transform", function(d) { return "translate(" + x0(d.Country) + ",0)"; })
     .selectAll("rect")
     .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
     .enter().append("rect")
@@ -63,7 +66,7 @@ d3.csv("index.csv", function(d, i, columns) {
       .attr("fill", "#000")
       .attr("font-weight", "bold")
       .attr("text-anchor", "start")
-      .text("Percentage");
+      .text("%");
 
   var legend = g.append("g")
       .attr("font-family", "sans-serif")
