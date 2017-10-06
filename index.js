@@ -19,7 +19,7 @@ var y = d3.scaleLinear()
 
 //kleuren voor de barchart
 var z = d3.scaleOrdinal()
-    .range(["#00008B", "#483D8B", "#87CEFA", "#191970", "#7B68EE", "#8B008B", "#DC143C", "#FFB6C1", "#48D1CC", "#DB7093", "#2E8B57", "#008080"]);
+    .range(["#00008B", "#483D8B", "#87CEFA", "#AFEEEE", "#7B68EE", "#8B008B", "#DC143C", "#FFB6C1", "#48D1CC", "#DB7093", "#2E8B57", "#008080"]);
 
 //door de data heen loopen
 d3.csv("index.csv", function(d, i, columns) {
